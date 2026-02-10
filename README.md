@@ -37,12 +37,14 @@ to simulate realistic demand patterns across regions and services.
 ---
 
 ## Repository Structure
+
+```
 azure-demand-forecasting/
-│
 ├── azure.py
 ├── azure_dataset.csv
 ├── README.md
-├── LICENSE
+└── LICENSE
+```
 
 ---
 
