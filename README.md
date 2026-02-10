@@ -1,21 +1,21 @@
 # Azure Demand Forecasting & Capacity Optimization System
 
 ## Overview
-This project focuses on building a data-driven system to forecast Azure Compute and Storage
-demand using historical usage data. The objective is to assist capacity planning teams in
-making informed provisioning decisions, thereby reducing over-provisioning and
-under-provisioning of cloud infrastructure.
+This project focuses on building a data driven system to forecast **Azure Compute and Storage demand**
+using historical usage data. The objective is to assist capacity planning teams in making informed
+provisioning decisions, thereby reducing both **over-provisioning** and **under-provisioning**
+of cloud infrastructure.
 
-Since real Azure production data is confidential, representative synthetic datasets are used
+Since real Azure production data is confidential, representative **synthetic datasets** are used
 to simulate realistic demand patterns across regions and services.
 
 ---
 
 ## Project Objectives
-- Forecast Azure Compute and Storage demand
-- Support efficient capacity planning decisions
+- Forecast Azure Compute and Storage demand accurately
+- Support efficient capacity planning and provisioning decisions
 - Improve utilization of cloud infrastructure
-- Reduce cost impact due to inaccurate demand estimation
+- Reduce cost impact caused by inaccurate demand estimation
 
 ---
 
@@ -39,15 +39,29 @@ to simulate realistic demand patterns across regions and services.
 ## Repository Structure
 azure-demand-forecasting/
 │
-├── data/
-│ ├── raw/ # Raw historical demand data
-│ └── processed/ # Cleaned and validated datasets
-│
-├── notebooks/ # Data analysis and experimentation notebooks
-├── src/ # Python scripts
-│
-├── README.md # Project documentation
-├── LICENSE # MIT License
+├── azure.py
+├── azure_dataset.csv
+├── README.md
+├── LICENSE
+
+---
+
+## Dataset Description
+
+**File:** `azure_dataset.csv`
+
+The dataset represents historical Azure service demand and includes the following fields:
+
+- Date of usage (date only)
+- Azure region
+- Service type (Compute / Storage)
+- Demand units
+- Capacity allocator
+- Cost incurred (USD)
+- Service availability
+- Holiday indicator
+
+This dataset is synthetically generated to closely resemble real-world Azure demand behavior.
 
 ---
 
@@ -56,15 +70,29 @@ azure-demand-forecasting/
 ### Milestone 1: Data Collection & Preparation
 - Collected historical demand data representing Azure Compute and Storage usage
 - Included regional demand variations
-- Validated and cleaned datasets for consistency and accuracy
-- Prepared datasets for feature engineering and modeling
+- Cleaned and validated datasets for consistency and accuracy
+- Prepared data for feature engineering and future modeling
 
 ---
 
-## Status
-🟡 **Milestone 1: In Progress / Completed**
+## Current Status
+🟢 **Milestone 1: Completed**
+
+---
+
+## Future Work
+- Feature engineering and data enrichment
+- Demand forecasting using machine learning models
+- Model evaluation and accuracy improvement
+- Integration with capacity planning insights
+
+---
+
+## License
+This project is licensed under the **MIT License**.  
+See the `LICENSE` file for more details.
 
 ---
 
 ## Author
-Infosys Intern – Azure Demand Forecasting Project
+Sania Mactelin A P – Azure Demand Forecasting Project
