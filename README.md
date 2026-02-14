@@ -61,7 +61,8 @@ The dataset represents historical Azure service demand and includes the followin
 - Capacity allocator
 - Cost incurred (USD)
 - Service availability
-- Holiday indicator
+- Demand Urgency
+- SLA Priority
 
 This dataset is synthetically generated to closely resemble real-world Azure demand behavior.
 
@@ -94,7 +95,3 @@ This dataset is synthetically generated to closely resemble real-world Azure dem
 This project is licensed under the **MIT License**.  
 See the `LICENSE` file for more details.
 
----
-
-## Author
-Sania Mactelin A P – Azure Demand Forecasting Project
