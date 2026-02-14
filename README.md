@@ -3,7 +3,7 @@
 ## Overview
 This project focuses on building a data driven system to forecast **Azure Compute and Storage demand**
 using historical usage data. The objective is to assist capacity planning teams in making informed
-provisioning decisions, thereby reducing both **over-provisioning** and **under-provisioning**
+provisioning decisions, thereby reducing both **over provisioning** and **under provisioning**
 of cloud infrastructure.
 
 Since real Azure production data is confidential, representative **synthetic datasets** are used
@@ -20,7 +20,7 @@ to simulate realistic demand patterns across regions and services.
 ---
 
 ## Scope of the Project
-- Historical time-series demand data (12–24 months)
+- Historical time series demand data (12–24 months)
 - Multiple Azure regions
 - Compute and Storage services only
 - Focus on data preparation and modeling methodology
@@ -42,8 +42,15 @@ to simulate realistic demand patterns across regions and services.
 azure-demand-forecasting/
 ├── azure.py
 ├── azure_dataset.csv
+├── visualization.py
 ├── README.md
-└── LICENSE
+└── MIT License
+└── plots/
+      ├── demand_trend.png
+      ├── demand_by_service.png
+      ├── cost_by_region.png
+      ├── demand_by_urgency.png
+      └── demand_by_sla.png
 ```
 
 ---
@@ -64,7 +71,7 @@ The dataset represents historical Azure service demand and includes the followin
 - Demand Urgency
 - SLA Priority
 
-This dataset is synthetically generated to closely resemble real-world Azure demand behavior.
+This dataset is synthetically generated to closely resemble real world Azure demand behavior.
 
 ---
 
@@ -93,5 +100,5 @@ This dataset is synthetically generated to closely resemble real-world Azure dem
 
 ## License
 This project is licensed under the **MIT License**.  
-See the `LICENSE` file for more details.
+See the `MIT License` file for more details.
 
