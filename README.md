@@ -31,6 +31,8 @@ to simulate realistic demand patterns across regions and services.
 - Python
 - Pandas
 - NumPy
+- Matplotlib  
+- Feature Engineering Techniques  
 - Machine Learning (future milestones)
 - Azure Machine Learning concepts
 
@@ -59,7 +61,7 @@ azure-demand-forecasting/
 
 ## Dataset Description
 
-**File:** `azure_dataset.csv` (Milestone 1 output)
+**File:** `azure_dataset.csv` (Milestone 1 Output)
 
 The dataset represents historical Azure service demand and includes the following fields:
 
