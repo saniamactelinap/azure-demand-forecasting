@@ -217,3 +217,16 @@ plt.show()
 
 print("\nMilestone 3 Completed Successfully")
 print("Best Forecasting Model:", final_model)
+
+# 14. SAVE MODEL FOR MILESTONE 4
+
+import joblib
+
+if final_model == "XGBoost":
+    joblib.dump(best_xgb_model, "trained_xgb_model.pkl")
+    print("XGBoost model saved for deployment")
+else:
+    print("ARIMA selected (not saved as .pkl)")
+
+print("\nMilestone 3 Completed Successfully")
+print("Best Forecasting Model:", final_model)
