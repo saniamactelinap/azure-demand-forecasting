@@ -44,16 +44,15 @@ def load_data():
         df = pd.read_csv("azure_dataset_engineered.csv")
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         
-        # Ensure categorical columns exist (Merge from raw if one-hot encoded in engineered)
+        # Ensure categorical columns exist
         if 'azure_region' not in df.columns or 'service_type' not in df.columns:
             raw_df = pd.read_csv("azure_dataset.csv")
             raw_df['timestamp'] = pd.to_datetime(raw_df['timestamp'])
             df = pd.merge(df, raw_df[['timestamp', 'azure_region', 'service_type']], on='timestamp', how='left')
 
-        # Calculate specific dynamic features if not present
+        # Calculate dynamic features if not present
         if 'placed_capacity' not in df.columns:
-            # Seeded for consistent UI
-            np.random.seed(42) 
+            np.random.seed(42)
             df['placed_capacity'] = df['demand_units'] * np.random.uniform(1.1, 1.5, len(df))
             df['wasted_capacity'] = df['placed_capacity'] - df['demand_units']
             df['utilization_pct'] = (df['demand_units'] / df['placed_capacity']) * 100
@@ -70,15 +69,33 @@ def load_data():
         st.error(f"Error loading datasets: {e}")
         return None, None
 
+# -----------------------------
+# LOAD MODELS FROM GOOGLE DRIVE
+# -----------------------------
+import gdown
+
 @st.cache_resource
 def load_models():
     xgb_model, arima_model = None, None
-    try: xgb_model = joblib.load("trained_xgb_model.pkl")
-    except: st.warning("trained_xgb_model.pkl not found.")
     
-    try: arima_model = joblib.load("trained_arima_model.pkl")
-    except: st.warning("trained_arima_model.pkl not found.")
-        
+    # XGBoost Model
+    try:
+        url_xgb = "https://drive.google.com/uc?id=1SwwuTu5Hgy7L-zM35gszHLMwEgYlB6_0"
+        output_xgb = "trained_xgb_model.pkl"
+        gdown.download(url_xgb, output_xgb, quiet=False)
+        xgb_model = joblib.load(output_xgb)
+    except Exception as e:
+        st.warning(f"XGBoost model load failed: {e}")
+    
+    # ARIMA Model
+    try:
+        url_arima = "https://drive.google.com/uc?id=1cE23UV8QnUo0Fy2W4KwMYttqXk8fVaMU"
+        output_arima = "trained_arima_model.pkl"
+        gdown.download(url_arima, output_arima, quiet=False)
+        arima_model = joblib.load(output_arima)
+    except Exception as e:
+        st.warning(f"ARIMA model load failed: {e}")
+    
     return xgb_model, arima_model
 
 df, forecast = load_data()
