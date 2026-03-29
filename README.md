@@ -1,5 +1,8 @@
 # Azure Demand Forecasting & Capacity Optimization System
 
+#[Deployed website:](https://azure-demand-forecasting.streamlit.app/)
+#[Video link](https://drive.google.com/file/d/1htWkPRJ4Le2JVve0hLu461IDOEAMPYA0/view?usp=drive_link)
+
 ## Overview
 This project focuses on building a data driven system to forecast **Azure Compute and Storage demand**
 using historical usage data. The objective is to assist capacity planning teams in making informed
@@ -38,6 +41,7 @@ to simulate realistic demand patterns across regions and services.
 - Feature Engineering Techniques  
 - Machine Learning 
 - Azure Machine Learning concepts
+- Streamlit
 
 ---
 
@@ -54,14 +58,15 @@ azure-demand-forecasting/
 ├── milestone3_demand_forecasting_models.py
 ├── milestone4_dashboard.py
 │
-├──trained_arima_model.pkl
-├──trained_xgb_model.pkl
+├──trained_arima_model.pkl 
+├──trained_xgb_model.pkl 
 │
 ├── forecast_results.csv
 ├── model_comparison_graph.png
 │
 ├── visualization.py
 │
+├── requirements.txt
 ├── README.md
 └── MIT License
 │
@@ -169,11 +174,13 @@ The objective of this milestone was to **train and evaluate forecasting models**
 - Traditional time series forecasting model
 - Suitable for sequential demand patterns
 - Tuned using parameter search for optimal (p,d,q) configuration
+- [trained_arima_model.pkl](https://drive.google.com/file/d/1cE23UV8QnUo0Fy2W4KwMYttqXk8fVaMU/view?usp=drive_link)
 
 **2. XGBoost Regressor**
 - Gradient boosting machine learning model
 - Handles nonlinear patterns and feature interactions effectively
 - Hyperparameter tuning performed using GridSearchCV
+- [trained_xgb_model.pkl](https://drive.google.com/file/d/1SwwuTu5Hgy7L-zM35gszHLMwEgYlB6_0/view?usp=drive_link)
 
 ---
 
