@@ -36,7 +36,7 @@ to simulate realistic demand patterns across regions and services.
 - XGBoost
 - Scikit-learn
 - Feature Engineering Techniques  
-- Machine Learning (future milestones)
+- Machine Learning 
 - Azure Machine Learning concepts
 
 ---
@@ -46,12 +46,16 @@ to simulate realistic demand patterns across regions and services.
 ```
 azure-demand-forecasting/
 │
-├── azure.py
 ├── azure_dataset.csv
-├── azure_dataset_engineered.py
+├── azure_dataset_engineered.csv
 │
+├── azure.py
 ├── milestone2_feature_engineering.py
 ├── milestone3_demand_forecasting_models.py
+├── milestone4_dashboard.py
+│
+├──trained_arima_model.pkl
+├──trained_xgb_model.pkl
 │
 ├── forecast_results.csv
 ├── model_comparison_graph.png
@@ -61,12 +65,15 @@ azure-demand-forecasting/
 ├── README.md
 └── MIT License
 │
+└── documentations/
+│
 └── plots/
       ├── demand_trend.png
       ├── demand_by_service.png
       ├── cost_by_region.png
       ├── demand_by_urgency.png
       └── demand_by_sla.png
+
 ```
 
 ---
@@ -190,6 +197,48 @@ Therefore, **XGBoost was selected as the final forecasting model** due to its su
 
 ---
 
+# Milestone 4: Dashboard & Capacity Optimization
+
+The objective of this milestone was to **develop an interactive dashboard** that visualizes Azure demand forecasts and provides actionable insights for capacity planning and optimization.
+
+---
+
+## Dashboard Features
+
+**1. Interactive Forecast Visualization**
+- Compare **actual demand** versus **predicted demand** from the XGBoost model  
+- Filter by **service type** (Compute / Storage) and **Azure region**  
+- Inspect trends and spikes with dynamic, interactive charts  
+
+**2. Capacity Planning Insights**
+- Identify periods of **over provisioning** and **under provisioning**  
+- Detect **demand spikes** and **high volatility periods**  
+- Recommend **resource allocation adjustments** to optimize utilization  
+
+**3. Cost Analysis**
+- Compare **predicted vs actual cost per unit**  
+- Highlight potential **cost savings** from optimized capacity  
+
+**4. KPI Overview**
+- Key metrics including **total demand**, **forecast accuracy**, and **forecast vs actual deviations**  
+- Visual summaries for **regions, services, and SLA priorities**  
+
+**5. User-Friendly Interface**
+- Built using **Streamlit** for rapid prototyping and deployment  
+- Modular layout with KPI overview, trend analysis, and optimization recommendations  
+- Real-time filtering and interactive visualizations for decision support  
+
+---
+
+## Dashboard Impact
+
+- Provides **data-driven decision support** for cloud capacity planning  
+- Reduces the risk of **over-provisioning**, lowering costs  
+- Improves **resource utilization** and service reliability  
+- Enables **strategic planning** based on forecast insights  
+
+---
+
 ### Visualization Output
 
 The project includes visualization comparing:
@@ -205,16 +254,7 @@ This comparison graph is stored as:
 🟢 **Milestone 1: Completed**
 🟢 **Milestone 2: Completed**  
 🟢 **Milestone 3: Completed** 
-🟡 **Milestone 4: Capacity Optimization & Visualization (Upcoming)**
-
----
-
-## Future Work
-- Improve model performance with additional feature engineering 
-- Implement deep learning models (LSTM / Transformer forecasting)  
-- Build interactive demand forecasting dashboards
-- Integrate forecasting outputs into capacity planning systems 
-- Deploy models using Azure Machine Learning services
+🟢 **Milestone 4: Completed** 
 
 ---
 
