@@ -1,7 +1,8 @@
 # Azure Demand Forecasting & Capacity Optimization System
 
-#[Deployed website:](https://azure-demand-forecasting.streamlit.app/)
-#[Video link](https://drive.google.com/file/d/1htWkPRJ4Le2JVve0hLu461IDOEAMPYA0/view?usp=drive_link)
+##[Deployed website:](https://azure-demand-forecasting.streamlit.app/)
+
+##[Video link](https://drive.google.com/file/d/1htWkPRJ4Le2JVve0hLu461IDOEAMPYA0/view?usp=drive_link)
 
 ## Overview
 This project focuses on building a data driven system to forecast **Azure Compute and Storage demand**
